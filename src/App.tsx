@@ -1,8 +1,15 @@
+import React, { useState } from 'react';
+import A1Report from './A1Report';
+import A2Report from './A2Report';
+
 function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'a1' | 'a2'>('home');
+
+
   const links = [
     { title: 'A0 • Project Website & Links', href: '#' },
-    { title: 'A1 • Conceptual Architecture (Report)', href: '#' },
-    { title: 'A2 • Concrete Architecture (Report + Understand project)', href: '#' },
+    { title: 'A1 • Conceptual Architecture (Report)', onClick: () => setCurrentPage('a1') },
+    { title: 'A2 • Concrete Architecture (Report + Understand project)', onClick: () => setCurrentPage('a2') },
     { title: 'A3 • Enhancement Proposal (Report + SAAM)', href: '#' },
     { title: 'AI Collaboration Report (Appendix D)', href: '#' },
     { title: 'Group Policy & Roles', href: '#' }
@@ -16,6 +23,12 @@ function App() {
     { name: 'Vedansh Bhatt', role: '' },
     { name: 'Sameer Bandha', role: '' }
   ]
+  if (currentPage === 'a1') {
+    return <A1Report setCurrentPage={setCurrentPage} />;
+  }
+  if (currentPage === 'a2') {
+    return <A2Report setCurrentPage={setCurrentPage} />;
+  }
 
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
@@ -55,15 +68,13 @@ function App() {
         <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {links.map((link) => (
             <li key={link.title}>
-              <a
-                className="group flex items-center justify-between gap-3 h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-medium text-white/90 shadow-sm ring-1 ring-white/10 transition hover:bg-white/10"
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                onClick={link.onClick}
+                className="group w-full flex items-center justify-between gap-3 h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-medium text-white/90 shadow-sm ring-1 ring-white/10 transition hover:bg-white/10"
               >
                 <span className="flex-1 truncate">{link.title}</span>
                 <span aria-hidden className="shrink-0 translate-x-0 transition group-hover:translate-x-0.5">→</span>
-              </a>
+              </button>
             </li>
           ))}
         </ul>
