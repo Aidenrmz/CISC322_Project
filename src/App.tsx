@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import A1Report from './A1Report';
 import A2Report from './A2Report';
 
@@ -7,12 +7,9 @@ function App() {
 
 
   const links = [
-    { title: 'A0 • Project Website & Links', href: '#' },
-    { title: 'A1 • Conceptual Architecture (Report)', onClick: () => setCurrentPage('a1') },
-    { title: 'A2 • Concrete Architecture (Report + Understand project)', onClick: () => setCurrentPage('a2') },
-    { title: 'A3 • Enhancement Proposal (Report + SAAM)', href: '#' },
-    { title: 'AI Collaboration Report (Appendix D)', href: '#' },
-    { title: 'Group Policy & Roles', href: '#' }
+    { title: 'A1 • Conceptual Architecture', onClick: () => setCurrentPage('a1') },
+    { title: 'A2 • Concrete Architecture', onClick: () => setCurrentPage('a2') },
+    { title: 'A3 • Enhancement Proposal', href: '#' },
   ]
 
   const members = [
@@ -35,10 +32,10 @@ function App() {
       <header className="text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 shadow-sm ring-1 ring-white/10 backdrop-blur">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-          <span>Void Editor • CISC 322 Group 13</span>
+          <span>The Void Manual • CISC 322 Group 13</span>
         </div>
         <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Void Editor • Group Project Website
+          The Void Manual
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-balance text-white/70">
           Our course site for A0–A3: conceptual and concrete architecture, enhancement proposal,
@@ -70,7 +67,7 @@ function App() {
             <li key={link.title}>
               <button
                 onClick={link.onClick}
-                className="group w-full flex items-center justify-between gap-3 h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-medium text-white/90 shadow-sm ring-1 ring-white/10 transition hover:bg-white/10"
+                className={`group w-full ${link.onClick ? 'cursor-pointer' : 'cursor-not-allowed'} flex items-center justify-between gap-3 h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-medium text-white/90 shadow-sm ring-1 ring-white/10 transition hover:bg-white/10`}
               >
                 <span className="flex-1 truncate">{link.title}</span>
                 <span aria-hidden className="shrink-0 translate-x-0 transition group-hover:translate-x-0.5">→</span>
@@ -81,7 +78,7 @@ function App() {
       </section>
 
       <section className="mt-16 justify-center items-center" aria-labelledby="about-heading">
-        <h2 id="about-heading" className="text-lg font-semibold text-white/80 text-center">About Void Editor</h2>
+        <h2 id="about-heading" className="text-lg font-semibold text-white/80 text-center">About The Project</h2>
       <div className="mt-4 max-w-3xl text-pretty text-white/70 space-y-4 text-center mx-auto">
           <p>
             This website hosts our CISC 322 group project on Void Editor. It aggregates deliverables and
