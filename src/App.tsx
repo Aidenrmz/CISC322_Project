@@ -49,7 +49,9 @@ function App() {
             View Reports
           </a>
           <a
-            href="#"
+            href="https://github.com/Aidenrmz/CISC322_Project"
+            target="_blank"   // opens in a new tab
+            rel="noreferrer"   // security measure
             className="inline-flex items-center justify-center rounded-md border border-white/10 bg-white/0 px-5 py-2.5 text-sm font-semibold text-white/90 shadow-sm transition hover:bg-white/5"
           >
             View Repository
