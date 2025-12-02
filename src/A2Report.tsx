@@ -46,7 +46,7 @@ const A2Report: React.FC<A2ReportProps> = ({ setCurrentPage }) => {
         />
       </section>
       <section className="mt-16 max-w-3xl mx-auto text-white/70 space-y-4">
-        <h2 className="text-2xl font-semibold">A2 Report PDF</h2>
+        <h2 className="text-2xl font-semibold">A2 Slides PDF</h2>
         <iframe
           src="/A2ReportSlides.pdf"
           width="100%"

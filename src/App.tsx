@@ -1,15 +1,23 @@
 import { useState } from 'react';
 import A1Report from './A1Report';
 import A2Report from './A2Report';
+import A3Report from './A3Report';
+
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'a1' | 'a2'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'a1' | 'a2' | 'a3'>('home');
 
 
   const links = [
     { title: 'A1 • Conceptual Architecture', onClick: () => setCurrentPage('a1') },
     { title: 'A2 • Concrete Architecture', onClick: () => setCurrentPage('a2') },
     { title: 'A3 • Enhancement Proposal', href: '#' },
+    { title: 'A0 • Project Website & Links', href: '#' },
+    { title: 'A1 • Conceptual Architecture (Report)', onClick: () => setCurrentPage('a1') },
+    { title: 'A2 • Concrete Architecture (Report + Understand project)', onClick: () => setCurrentPage('a2') },
+    { title: 'A3 • Enhancement Proposal (Report + SAAM)', onClick: () => setCurrentPage('a3') },
+    { title: 'AI Collaboration Report (Appendix D)', href: '#' },
+    { title: 'Group Policy & Roles', href: '#' }
   ]
 
   const members = [
@@ -25,6 +33,9 @@ function App() {
   }
   if (currentPage === 'a2') {
     return <A2Report setCurrentPage={setCurrentPage} />;
+  }
+  if (currentPage === 'a3') {
+    return <A3Report setCurrentPage={setCurrentPage} />;
   }
 
   return (

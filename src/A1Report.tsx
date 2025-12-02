@@ -41,7 +41,7 @@ const A1Report: React.FC<A1ReportProps> = ({ setCurrentPage }) => {
         />
       </section>
       <section className="mt-16 max-w-3xl mx-auto text-white/70 space-y-4">
-        <h2 className="text-2xl font-semibold">A1 Report PDF</h2>
+        <h2 className="text-2xl font-semibold">A1 Slides PDF</h2>
         <iframe
           src="/A1ReportSlides.pdf"
           width="100%"
