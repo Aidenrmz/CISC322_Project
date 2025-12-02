@@ -9,9 +9,6 @@ function App() {
 
 
   const links = [
-    { title: 'A1 • Conceptual Architecture', onClick: () => setCurrentPage('a1') },
-    { title: 'A2 • Concrete Architecture', onClick: () => setCurrentPage('a2') },
-    { title: 'A3 • Enhancement Proposal', href: '#' },
     { title: 'A0 • Project Website & Links', href: '#' },
     { title: 'A1 • Conceptual Architecture (Report)', onClick: () => setCurrentPage('a1') },
     { title: 'A2 • Concrete Architecture (Report + Understand project)', onClick: () => setCurrentPage('a2') },
