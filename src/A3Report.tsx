@@ -38,7 +38,7 @@ const A3Report: React.FC<A3ReportProps> = ({ setCurrentPage }) => {
       <section className="mt-16 max-w-3xl mx-auto text-white/70 space-y-4">
         <h2 className="text-2xl font-semibold">A3 Report PDF</h2>
         <iframe
-          src="/src/assets/A3Report.pdf"
+          src="/A3Report.pdf"
           width="100%"
           height="600"
           className="border border-white/10 rounded-lg"
@@ -48,7 +48,7 @@ const A3Report: React.FC<A3ReportProps> = ({ setCurrentPage }) => {
       <section className="mt-16 max-w-3xl mx-auto text-white/70 space-y-4">
         <h2 className="text-2xl font-semibold">A3 Slides PDF</h2>
         <iframe
-          src="/src/assets/A3ReportSlides.pdf"
+          src="/A3ReportSlides.pdf"
           width="100%"
           height="600"
           className="border border-white/10 rounded-lg"
